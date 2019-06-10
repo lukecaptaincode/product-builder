@@ -13,11 +13,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/samteb/Angular-7-Webpack-4.git"
+    "url": "git remote add origin https://github.com/lukecaptaincode/product-builder.git"
   },
   "author": "Luke Captain <lukecaptain@hotmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/samteb/Angular-7-Webpack-4",
+  "homepage": "lukecaptain.com",
   "dependencies": {
     "@angular/animations": "~7.2",
     "@angular/common": "~7.2",
