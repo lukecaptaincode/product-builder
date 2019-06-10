@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base href="/">
+    <base href="./">
     <meta charset="UTF-8">
-    <title>Restaurant Menu</title>
+    <title>Product file builder</title>
 </head>
 <body>
     <app-root></app-root>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('select');
+            var instances = M.FormSelect.init(elems, null);
+        });
+    </script>
 </body>
 </html>

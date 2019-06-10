@@ -1,5 +1,4 @@
 'use strict';
-
 const webpackMerge            = require('webpack-merge');
 const ngw                     = require('@ngtools/webpack');
 const UglifyJsPlugin          = require('uglifyjs-webpack-plugin');
@@ -12,13 +11,15 @@ const helpers                 = require('./helpers');
 module.exports = webpackMerge(commonConfig, {
     mode: 'production',
 
+    // output: {
+    //     path: helpers.root('dist'),
+    //     publicPath: '/',
+    //     filename: '[hash].js',
+    //     chunkFilename: '[id].[hash].chunk.js'
+    // },
     output: {
-        path: helpers.root('dist'),
-        publicPath: '/',
-        filename: '[hash].js',
-        chunkFilename: '[id].[hash].chunk.js'
+        filename: 'bundle.js',
     },
-
     optimization: {
         noEmitOnErrors: true,
         splitChunks: {
@@ -40,7 +41,7 @@ module.exports = webpackMerge(commonConfig, {
                 },
                 canPrint: false
             })
-        ]
+        ],
     },
 
     module: {

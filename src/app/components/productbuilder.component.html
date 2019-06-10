@@ -1,0 +1,36 @@
+<h1>Testing deck</h1>
+<div class="row">
+    <form class="col s12" #form="ngForm">
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="EAN" [(ngModel)]="productObj.ean" type="text" class="validate" name="ean-input">
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Name" [(ngModel)]="productObj.name" type="text" class="validate" name="name-input">
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Category" [(ngModel)]="productObj.category" type="text" class="validate" name="category-input">
+            </div>
+            <div class="input-field col s5">
+                <select name="category-input">
+                    <option value="" disabled selected>Choose your option</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="URLS" [(ngModel)]="productObj.urls" type="text" class="validate" name="urls-input">
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Image" [(ngModel)]="productObj.image" type="text" class="validate" name="image-input">
+            </div>
+        </div>
+        <a class="waves-effect waves-light btn" (click)="updateProductsFile()">Add</a>
+    </form>
+    <div>
+        <ul *ngFor="let item of products">
+            <li>{{item.ean}}</li>
+        </ul>
+    </div>
+</div>

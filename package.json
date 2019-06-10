@@ -1,11 +1,12 @@
 {
-  "name": "angular-7-webpack-4-boilerplate",
+  "name": "product-file-builder",
   "version": "1.0.0",
-  "description": "Angular 7 application with webpack 4 boilerplate",
+  "description": "Product file builder",
   "scripts": {
     "webpack-dev": "cross-env NODE_ENV=development webpack --mode development",
-    "webpack-prod": "cross-env NODE_ENV=production webpack --mode production",
+    "webpack-prod": "cross-env NODE_ENV=production webpack --mode production --optimize-max-chunks 1",
     "build:dev": "webpack-dev-server --inline --hot --progress --port 8080",
+    "build:dev2": "webpack-dev-server --inline --hot --progress --port 8080 && node ./file-processor-server/app.js",
     "build:prod": "npm run build:clean && ngc && npm run webpack-prod && npm run build:clean",
     "build:clean": "del-cli 'src/**/*.js' 'src/**/*.js.map' 'src/**/*.ngsummary.json' 'src/**/*.metadata.json' 'src/**/**/*.ngfactory.ts' 'src/**/*.ngstyle.ts' 'src/**/*.shim.ts'",
     "serve": "lite-server"
@@ -14,7 +15,7 @@
     "type": "git",
     "url": "https://github.com/samteb/Angular-7-Webpack-4.git"
   },
-  "author": "samteb <sam.teboul@gmail.com>",
+  "author": "Luke Captain <lukecaptain@hotmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/samteb/Angular-7-Webpack-4",
   "dependencies": {
@@ -30,8 +31,18 @@
     "@angular/platform-server": "~7.2",
     "@angular/router": "~7.2",
     "@angular/upgrade": "~7.2",
+    "@octokit/rest": "^16.26.0",
+    "bluebird": "^3.5.5",
     "core-js": "~2.6",
+    "materialize-css": "^1.0.0-rc.2",
+    "mkdirp": "^0.5.1",
     "rxjs": "~6.4",
+    "sequelize": "^5.8.6",
+    "sqlite3": "^4.0.8",
+    "write-file": "^1.0.0",
+    "xfs": "^0.2.6",
+    "xml-writer": "^1.7.0",
+    "xmlbuilder": "^13.0.2",
     "zone.js": "~0.8"
   },
   "devDependencies": {
@@ -62,6 +73,7 @@
     "webpack": "~4.29",
     "webpack-cli": "~3.2",
     "webpack-dev-server": "^3.1.14",
-    "webpack-merge": "~4.2"
+    "webpack-merge": "~4.2",
+    "xml2js": "^0.4.19"
   }
 }
